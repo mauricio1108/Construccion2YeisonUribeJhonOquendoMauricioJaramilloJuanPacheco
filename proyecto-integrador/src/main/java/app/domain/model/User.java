@@ -5,14 +5,14 @@ import java.util.Date;
 public class User {
 
     private String fullName;
-    private String identificationNumber; // Unique ID, 'cedula'
+    private String identificationNumber;
     private String email;
     private String phoneNumber;
-    private Date birthDate; // Max 150 years
-    private String address; // Max 30 characters
-    private Role role; // Using the enum Role
-    private String username; // Unique, max 15 alphanumeric characters
-    private String password; // At least 8 characters, one uppercase, one number, one special character
+    private Date birthDate;
+    private String address;
+    private Role role;
+    private String username;
+    private String password;
 
     public User(String fullName, String identificationNumber, String email, String phoneNumber, Date birthDate, String address, Role role, String username, String password) {
         this.fullName = fullName;

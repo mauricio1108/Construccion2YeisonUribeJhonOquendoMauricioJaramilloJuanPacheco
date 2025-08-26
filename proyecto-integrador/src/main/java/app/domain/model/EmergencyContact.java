@@ -4,9 +4,9 @@ package app.domain.model;
 
 public class EmergencyContact {
 
-    private String contactName; // Split name and last name
+    private String contactName;
     private String relationship;
-    private String phoneNumber; // 10 digits, numbers only
+    private String phoneNumber;
 
     public EmergencyContact(String contactName, String relationship, String phoneNumber) {
         this.contactName = contactName;
@@ -14,7 +14,6 @@ public class EmergencyContact {
         this.phoneNumber = phoneNumber;
     }
 
-    // Getters and setters
     public String getContactName() {
         return contactName;
     }

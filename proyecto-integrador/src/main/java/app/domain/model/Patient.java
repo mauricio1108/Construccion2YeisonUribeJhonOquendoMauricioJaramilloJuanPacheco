@@ -6,15 +6,15 @@ import java.time.Period;
 
 public class Patient {
 
-    private String identificationNumber; // 'cedula'
+    private String identificationNumber;
     private String fullName;
-    private Date birthDate; // Max 150 years
+    private Date birthDate;
     private String gender;
     private String address;
-    private String phoneNumber; // 10 digits
+    private String phoneNumber;
     private String email;
-    private EmergencyContact emergencyContact; // One contact
-    private MedicalInsurance medicalInsurance; // One policy
+    private EmergencyContact emergencyContact;
+    private MedicalInsurance medicalInsurance;
 
     public Patient(String identificationNumber, String fullName, Date birthDate, String gender, String address, String phoneNumber, String email, EmergencyContact emergencyContact, MedicalInsurance medicalInsurance) {
         this.identificationNumber = identificationNumber;

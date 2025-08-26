@@ -19,7 +19,6 @@ public class MedicationOrder extends Order {
         this.cost = cost;
     }
 
-    // Getters and setters
     public int getItemNumber() {
         return itemNumber;
     }

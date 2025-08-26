@@ -36,7 +36,6 @@ public class Invoice {
         this.diagnosticAids = diagnosticAids;
     }
 
-    // Getters and setters
     public String getPatientName() {
         return patientName;
     }

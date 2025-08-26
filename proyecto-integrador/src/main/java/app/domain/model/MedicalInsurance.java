@@ -6,8 +6,8 @@ public class MedicalInsurance {
 
     private String companyName;
     private String policyNumber;
-    private boolean isActive; // Boolean
-    private Date expirationDate; // dd/mm/yyyy
+    private boolean isActive;
+    private Date expirationDate;
 
     public MedicalInsurance(String companyName, String policyNumber, boolean isActive, Date expirationDate) {
         this.companyName = companyName;
@@ -16,7 +16,6 @@ public class MedicalInsurance {
         this.expirationDate = expirationDate;
     }
 
-    // Getters and setters
     public String getCompanyName() {
         return companyName;
     }

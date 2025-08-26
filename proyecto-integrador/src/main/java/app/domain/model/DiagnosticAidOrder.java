@@ -20,7 +20,6 @@ public class DiagnosticAidOrder extends Order {
         this.cost = cost;
     }
  
-    // Getters and setters
     public int getItemNumber() { return itemNumber; }
     public void setItemNumber(int itemNumber) { this.itemNumber = itemNumber; }
     public String getDiagnosticAidId() { return diagnosticAidId; }
@@ -37,6 +36,6 @@ public class DiagnosticAidOrder extends Order {
     public void setCost(double cost) { this.cost = cost; }
 
     public DiagnosticAidOrder findById(DiagnosticAidOrder order) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

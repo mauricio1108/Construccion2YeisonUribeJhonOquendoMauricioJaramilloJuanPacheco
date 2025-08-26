@@ -4,13 +4,13 @@ import java.util.Date;
 import java.util.Map;
 
 public class ClinicalHistory {
-    private String patientId; // Patient's ID ('cedula') as main key
-    private Date consultationDate; // Subkey, 'fecha de atencion'
-    private String physicianId; // Max 10 digits
+    private String patientId;
+    private Date consultationDate;
+    private String physicianId;
     private String reasonForConsultation;
     private String symptoms;
     private String diagnosis;
-    private Map<String, Object> details; // Unstructured data storage
+    private Map<String, Object> details;
  
     public ClinicalHistory(String patientId, Date consultationDate, String physicianId, String reasonForConsultation, String symptoms, String diagnosis, Map<String, Object> details) {
         this.patientId = patientId;
@@ -22,7 +22,6 @@ public class ClinicalHistory {
         this.details = details;
     }
  
-    // Getters and setters
     public String getPatientId() { return patientId; }
     public void setPatientId(String patientId) { this.patientId = patientId; }
     public Date getConsultationDate() { return consultationDate; }
