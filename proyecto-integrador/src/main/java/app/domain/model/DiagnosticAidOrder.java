@@ -9,6 +9,7 @@ public class DiagnosticAidOrder extends Order {
     private String specialistId;
     private double cost;
  
+    /*
     public DiagnosticAidOrder(int orderNumber, String patientId, String physicianId, java.util.Date creationDate, int itemNumber, String diagnosticAidId, String diagnosticAidName, int quantity, boolean requiresSpecialist, String specialistId, double cost) {
         super(orderNumber, patientId, physicianId, creationDate);
         this.itemNumber = itemNumber;
@@ -18,7 +19,7 @@ public class DiagnosticAidOrder extends Order {
         this.requiresSpecialist = requiresSpecialist;
         this.specialistId = specialistId;
         this.cost = cost;
-    }
+    }*/
  
     public int getItemNumber() { return itemNumber; }
     public void setItemNumber(int itemNumber) { this.itemNumber = itemNumber; }

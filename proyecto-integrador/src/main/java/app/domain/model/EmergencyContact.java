@@ -7,12 +7,12 @@ public class EmergencyContact {
     private String contactName;
     private String relationship;
     private String phoneNumber;
-
+    /*
     public EmergencyContact(String contactName, String relationship, String phoneNumber) {
         this.contactName = contactName;
         this.relationship = relationship;
         this.phoneNumber = phoneNumber;
-    }
+    }*/
 
     public String getContactName() {
         return contactName;

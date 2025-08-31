@@ -5,17 +5,16 @@ import java.util.Date;
 public class Order {
 
     private int orderNumber; // Max 6 digits
-    private String patientId;
+    private Patient patient;
     private String physicianId;
     private Date creationDate;
 
-    public Order(int orderNumber, String patientId, String physicianId, Date creationDate) {
+    /*public Order(int orderNumber, String physicianId, Date creationDate) {
         this.orderNumber = orderNumber;
-        this.patientId = patientId;
         this.physicianId = physicianId;
         this.creationDate = creationDate;
-    }
-
+    }*/
+    
     // Getters and setters
     public int getOrderNumber() {
         return orderNumber;
@@ -25,12 +24,12 @@ public class Order {
         this.orderNumber = orderNumber;
     }
 
-    public String getPatientId() {
-        return patientId;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     public String getPhysicianId() {

@@ -10,6 +10,7 @@ public class ProcedureOrder extends Order {
     private String specialistId;
     private double cost;
  
+    /*
     public ProcedureOrder(int orderNumber, String patientId, String physicianId, java.util.Date creationDate, int itemNumber, String procedureId, String procedureName, int quantity, String repetitionFrequency, boolean requiresSpecialist, String specialistId, double cost) {
         super(orderNumber, patientId, physicianId, creationDate);
         this.itemNumber = itemNumber;
@@ -20,7 +21,7 @@ public class ProcedureOrder extends Order {
         this.requiresSpecialist = requiresSpecialist;
         this.specialistId = specialistId;
         this.cost = cost;
-    }
+    }*/
  
     // Getters and setters
     public int getItemNumber() { return itemNumber; }

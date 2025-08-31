@@ -12,6 +12,7 @@ public class ClinicalHistory {
     private String diagnosis;
     private Map<String, Object> details;
  
+    /*
     public ClinicalHistory(String patientId, Date consultationDate, String physicianId, String reasonForConsultation, String symptoms, String diagnosis, Map<String, Object> details) {
         this.patientId = patientId;
         this.consultationDate = consultationDate;
@@ -20,7 +21,7 @@ public class ClinicalHistory {
         this.symptoms = symptoms;
         this.diagnosis = diagnosis;
         this.details = details;
-    }
+    }*/
  
     public String getPatientId() { return patientId; }
     public void setPatientId(String patientId) { this.patientId = patientId; }

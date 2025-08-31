@@ -20,12 +20,12 @@ public class CreateInvoice {
         }
         if (invoice.isMedicine()) {
             DiagnosticAidOrder diagnosticAidOrder = diagnosticAidOrderPort.findById(invoice.getOrder());
-            if (diagnosticAidOrder == null || patient.getIdentificationNumber()!= diagnosticAidOrder.getPatientId()) {
+            if (diagnosticAidOrder == null || patient.getIdentificationNumber()!= diagnosticAidOrder.getPatient().getIdentificationNumber()) {
                 throw new Exception("la venta de un medicamento requiere de una orden asociada");
             }
             invoice.setOrder(diagnosticAidOrder);
         }
-        invoice.setPatientName(patient.getFullName());
+        invoice.setPatient(patient);
         //invoice.setPatientAge(patient.getBirthDate());
         invoicePort.save(invoice);
     }
