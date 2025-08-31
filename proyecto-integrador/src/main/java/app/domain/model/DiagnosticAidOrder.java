@@ -6,7 +6,7 @@ public class DiagnosticAidOrder extends Order {
     private String diagnosticAidName;
     private int quantity;
     private boolean requiresSpecialist;
-    private String specialistId;
+    private User doctor;
     private double cost;
  
     /*
@@ -31,8 +31,12 @@ public class DiagnosticAidOrder extends Order {
     public void setQuantity(int quantity) { this.quantity = quantity; }
     public boolean isRequiresSpecialist() { return requiresSpecialist; }
     public void setRequiresSpecialist(boolean requiresSpecialist) { this.requiresSpecialist = requiresSpecialist; }
-    public String getSpecialistId() { return specialistId; }
-    public void setSpecialistId(String specialistId) { this.specialistId = specialistId; }
+    public User getDoctor() {
+        return doctor;
+    }
+    public void setDoctor(User doctor) {
+        this.doctor = doctor;
+    } 
     public double getCost() { return cost; }
     public void setCost(double cost) { this.cost = cost; }
 
