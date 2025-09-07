@@ -1,27 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package app.domain.services;
 
-
-import java.util.List;
-
-import app.domain.model.ClinicalHistory;
-import app.domain.model.Patient;
+import app.domain.model.ClinicalRecord;
 import app.domain.ports.ClinicalHistoryPort;
 import app.domain.ports.PatientPort;
 
-public class SearchClinicalHistoryByPatient {
-    private PatientPort patientPort;
-    private ClinicalHistoryPort clinicalHistoryPort;
-	
-    public List<ClinicalHistory> search(Patient patient) throws Exception{
-            patient = patientPort.findById(patient);
-            if(patient == null) {
-                    throw new Exception("no existe la mascota buscada");
-            }
-            return clinicalHistoryPort.findByPatient(patient);
+import java.util.List;
 
+public class SearchClinicalHistoryByPatient {
+
+    private ClinicalHistoryPort clinicalHistoryPort;
+    private PatientPort patientPort;
+
+    public List<ClinicalRecord> searchByPatientId(String patientId) throws Exception {
+        if (patientPort.findById(patientId) == null) {
+            throw new IllegalArgumentException("No se puede buscar la historia clínica de un paciente que no existe.");
+        }
+        
+        return clinicalHistoryPort.findByPatientId(patientId);
     }
 }

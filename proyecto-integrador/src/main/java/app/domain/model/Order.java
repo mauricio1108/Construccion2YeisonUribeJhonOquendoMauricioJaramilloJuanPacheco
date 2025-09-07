@@ -1,26 +1,23 @@
 package app.domain.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.List;
 
 public class Order {
 
-    private int orderNumber; // Max 6 digits
+    private String orderNumber;
     private Patient patient;
-    private String physicianId;
-    private Date creationDate;
+    private User doctor;
+    private LocalDate creationDate;
+    private List<MedicationOrder> medicationOrders;
+    private List<ProcedureOrder> procedureOrders;
+    private List<DiagnosticAidOrder> diagnosticAidOrders;
 
-    /*public Order(int orderNumber, String physicianId, Date creationDate) {
-        this.orderNumber = orderNumber;
-        this.physicianId = physicianId;
-        this.creationDate = creationDate;
-    }*/
-    
-    // Getters and setters
-    public int getOrderNumber() {
+    public String getOrderNumber() {
         return orderNumber;
     }
 
-    public void setOrderNumber(int orderNumber) {
+    public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber;
     }
 
@@ -32,19 +29,43 @@ public class Order {
         this.patient = patient;
     }
 
-    public String getPhysicianId() {
-        return physicianId;
+    public User getDoctor() {
+        return doctor;
     }
 
-    public void setPhysicianId(String physicianId) {
-        this.physicianId = physicianId;
+    public void setDoctor(User doctor) {
+        this.doctor = doctor;
     }
 
-    public Date getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public List<MedicationOrder> getMedicationOrders() {
+        return medicationOrders;
+    }
+
+    public void setMedicationOrders(List<MedicationOrder> medicationOrders) {
+        this.medicationOrders = medicationOrders;
+    }
+
+    public List<ProcedureOrder> getProcedureOrders() {
+        return procedureOrders;
+    }
+
+    public void setProcedureOrders(List<ProcedureOrder> procedureOrders) {
+        this.procedureOrders = procedureOrders;
+    }
+
+    public List<DiagnosticAidOrder> getDiagnosticAidOrders() {
+        return diagnosticAidOrders;
+    }
+
+    public void setDiagnosticAidOrders(List<DiagnosticAidOrder> diagnosticAidOrders) {
+        this.diagnosticAidOrders = diagnosticAidOrders;
     }
 }

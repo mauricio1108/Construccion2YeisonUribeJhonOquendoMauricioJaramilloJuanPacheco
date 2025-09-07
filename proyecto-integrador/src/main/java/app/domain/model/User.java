@@ -13,6 +13,7 @@ public class User {
     private Role role;
     private String username;
     private String password;
+    
 
     public User(String fullName, String identificationNumber, String email, String phoneNumber, Date birthDate, String address, Role role, String username, String password) {
         this.fullName = fullName;
@@ -98,4 +99,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+   
 }

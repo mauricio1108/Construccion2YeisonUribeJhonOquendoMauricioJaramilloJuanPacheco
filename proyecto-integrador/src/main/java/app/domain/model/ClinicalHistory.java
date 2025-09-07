@@ -3,35 +3,13 @@ package app.domain.model;
 import java.util.Date;
 import java.util.Map;
 
+
 public class ClinicalHistory {
-    private Patient patient;
-    private User doctor;
-    private Date consultationDate;
-    private String physicianId;
-    private String reasonForConsultation;
-    private String symptoms;
-    private String diagnosis;
-    private Map<String, Object> details;
-    private DiagnosticAidOrder diagnosticOrder;
-
-    public DiagnosticAidOrder getDiagnosticOrder() {
-        return diagnosticOrder;
-    }
-
-    public void setDiagnosticOrder(DiagnosticAidOrder diagnosticOrder) {
-        this.diagnosticOrder = diagnosticOrder;
-    }
- 
-    /*
-    public ClinicalHistory(String patientId, Date consultationDate, String physicianId, String reasonForConsultation, String symptoms, String diagnosis, Map<String, Object> details) {
-        this.patientId = patientId;
-        this.consultationDate = consultationDate;
-        this.physicianId = physicianId;
-        this.reasonForConsultation = reasonForConsultation;
-        this.symptoms = symptoms;
-        this.diagnosis = diagnosis;
-        this.details = details;
-    }*/
+    private long id; // Identificador único
+    private Patient patient; // Referencia al paciente
+    private String doctorCedula; // Cédula del médico
+    private Map<Date, Entry> entries; // Múltiples entradas por fecha
+    private Order order; // Referencia a la orden clínica
 
     public Patient getPatient() {
         return patient;
@@ -41,25 +19,27 @@ public class ClinicalHistory {
         this.patient = patient;
     }
 
-    public User getDoctor() {
-        return doctor;
+    public String getDoctorCedula() {
+        return doctorCedula;
     }
 
-    public void setDoctor(User doctor) {
-        this.doctor = doctor;
+    public void setDoctorCedula(String doctorCedula) {
+        this.doctorCedula = doctorCedula;
     }
- 
-    
-    public Date getConsultationDate() { return consultationDate; }
-    public void setConsultationDate(Date consultationDate) { this.consultationDate = consultationDate; }
-    public String getPhysicianId() { return physicianId; }
-    public void setPhysicianId(String physicianId) { this.physicianId = physicianId; }
-    public String getReasonForConsultation() { return reasonForConsultation; }
-    public void setReasonForConsultation(String reasonForConsultation) { this.reasonForConsultation = reasonForConsultation; }
-    public String getSymptoms() { return symptoms; }
-    public void setSymptoms(String symptoms) { this.symptoms = symptoms; }
-    public String getDiagnosis() { return diagnosis; }
-    public void setDiagnosis(String diagnosis) { this.diagnosis = diagnosis; }
-    public Map<String, Object> getDetails() { return details; }
-    public void setDetails(Map<String, Object> details) { this.details = details; }
+
+    public Map<Date, Entry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(Map<Date, Entry> entries) {
+        this.entries = entries;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 }
