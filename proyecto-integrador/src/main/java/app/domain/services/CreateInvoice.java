@@ -1,9 +1,12 @@
 package app.domain.services;
 
+import app.domain.model.DiagnosticAidOrder;
 import app.domain.model.Invoice;
 import app.domain.model.Patient;
 import app.domain.model.Order;
 import app.domain.model.MedicalInsurance;
+import app.domain.model.MedicationOrder;
+import app.domain.model.ProcedureOrder;
 import app.domain.model.User;
 import app.domain.ports.InvoicePort;
 import app.domain.ports.OrderPort;
@@ -51,11 +54,30 @@ public class CreateInvoice {
 
     private double calculateTotalCost(List<Order> orders) {
         double total = 0.0;
+        for (Order order : orders) {
+            if (order.getMedicationOrders() != null) {
+                for (MedicationOrder medicationOrder : order.getMedicationOrders()) {
+                    total += medicationOrder.getCost();
+                }
+            }
+
+            if (order.getProcedureOrders() != null) {
+                for (ProcedureOrder procedureOrder : order.getProcedureOrders()) {
+                    total += procedureOrder.getCost();
+                }
+            }
+
+            if (order.getDiagnosticAidOrders() != null) {
+                for (DiagnosticAidOrder diagnosticAidOrder : order.getDiagnosticAidOrders()) {
+                    total += diagnosticAidOrder.getCost();
+                }
+            }
+        }
         return total;
     }
 
     private double getAnnualCopago(Patient patient) throws Exception {
-        // Lógica para obtener el copago anual del paciente.
+        
         return 0.0;
     }
 }

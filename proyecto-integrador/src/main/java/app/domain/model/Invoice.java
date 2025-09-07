@@ -10,8 +10,7 @@ public class Invoice {
     private double totalCost;
     private double patientPayment;
     private double insurancePayment;
-    private List<InvoiceItem> items; // Lista de ítems para el desglose de la factura
-
+   
     // Getters y Setters
     public Patient getPatient() {
         return patient;
@@ -61,10 +60,5 @@ public class Invoice {
         this.insurancePayment = insurancePayment;
     }
 
-    public List<InvoiceItem> getItems() {
-        return items;
-    }
-    public void setItems(List<InvoiceItem> items) {
-        this.items = items;
-    }
+    
 }
