@@ -1,7 +1,9 @@
 package app.domain.model;
 
+import jakarta.persistence.Entity;
 import java.util.Date;
 
+@Entity
 public class User {
 
     private String fullName;
