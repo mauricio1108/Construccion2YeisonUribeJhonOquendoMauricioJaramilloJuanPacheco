@@ -1,13 +1,15 @@
 
 package app.domain.ports;
 
-import app.domain.model.ClinicalHistory;
-import app.domain.model.Patient;
+import app.domain.model.ClinicalRecord;
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ClinicalHistoryPort {
     
-    public void save(ClinicalHistory clinicalHisotory) throws Exception;
-    public List<ClinicalHistory> findByPatient(Patient patient) throws Exception;
-        
+    ClinicalRecord findByDate(String patientId, LocalDate date) throws Exception;
+
+    List<ClinicalRecord> findByPatientId(String patientId) throws Exception;
+
+    void save(String patientId, ClinicalRecord record) throws Exception;
 }
