@@ -7,11 +7,11 @@ public interface UserPort {
     
     User findByUserName(String user) throws Exception;
 
-    User findByDocument(String document) throws Exception;
+    User findByDocument(long document) throws Exception;
 
     void save(User user) throws Exception;
 
     void update(User user) throws Exception;
 
-    void delete(String id) throws Exception;
+    void delete(long id) throws Exception;
 }

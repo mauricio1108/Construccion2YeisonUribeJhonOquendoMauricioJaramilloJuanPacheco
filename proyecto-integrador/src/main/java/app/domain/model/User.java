@@ -1,13 +1,13 @@
 package app.domain.model;
 
 import jakarta.persistence.Entity;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 public class User {
 
     private String fullName;
-    private String identificationNumber;
+    private long identificationNumber;
     private String email;
     private String phoneNumber;
     private Date birthDate;
@@ -15,9 +15,11 @@ public class User {
     private Role role;
     private String username;
     private String password;
-    
 
-    public User(String fullName, String identificationNumber, String email, String phoneNumber, Date birthDate, String address, Role role, String username, String password) {
+    public User() {
+    }
+    
+    public User(String fullName, long identificationNumber, String email, String phoneNumber, Date birthDate, String address, Role role, String username, String password) {
         this.fullName = fullName;
         this.identificationNumber = identificationNumber;
         this.email = email;
@@ -38,11 +40,11 @@ public class User {
         this.fullName = fullName;
     }
 
-    public String getIdentificationNumber() {
+    public long getIdentificationNumber() {
         return identificationNumber;
     }
 
-    public void setIdentificationNumber(String identificationNumber) {
+    public void setIdentificationNumber(long identificationNumber) {
         this.identificationNumber = identificationNumber;
     }
 

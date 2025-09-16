@@ -2,7 +2,7 @@ package app.infrastructure.persistence.entities;
 
 import app.domain.model.Role;
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Entity
 @Table(name = "users")
@@ -15,8 +15,8 @@ public class UserEntity {
     @Column(name = "full_name", nullable = false, length = 100)
     private String fullName;
 
-    @Column(name = "identification_number", nullable = false, unique = true, length = 20)
-    private String identificationNumber;
+    @Column(unique = true)
+    private long identificationNumber;
 
     @Column(nullable = false, unique = true, length = 100)
     private String email;
@@ -25,7 +25,7 @@ public class UserEntity {
     private String phoneNumber;
 
     @Column(name = "birth_date")
-    private LocalDate birthDate;
+    private Date birthDate;
 
     @Column(length = 200)
     private String address;
@@ -34,7 +34,7 @@ public class UserEntity {
     @Column(nullable = false, length = 20)
     private Role role;
 
-    @Column(nullable = false, unique = true, length = 50)
+    @Column(nullable = false, length = 50)
     private String username;
 
     @Column(name = "password_hash", nullable = false, length = 255)
@@ -43,8 +43,8 @@ public class UserEntity {
     // ===== CONSTRUCTORES =====
     public UserEntity() {}
 
-    public UserEntity(String fullName, String identificationNumber, String email,
-                      String phoneNumber, LocalDate birthDate, String address,
+    public UserEntity(String fullName, long identificationNumber, String email,
+                      String phoneNumber, Date birthDate, String address,
                       Role role, String username, String passwordHash) {
         this.fullName = fullName;
         this.identificationNumber = identificationNumber;
@@ -75,11 +75,11 @@ public class UserEntity {
         this.fullName = fullName;
     }
 
-    public String getIdentificationNumber() {
+    public long getIdentificationNumber() {
         return identificationNumber;
     }
 
-    public void setIdentificationNumber(String identificationNumber) {
+    public void setIdentificationNumber(long identificationNumber) {
         this.identificationNumber = identificationNumber;
     }
 
@@ -99,11 +99,11 @@ public class UserEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
