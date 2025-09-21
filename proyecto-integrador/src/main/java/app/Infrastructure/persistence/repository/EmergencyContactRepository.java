@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package app.Infrastructure.persistence.repository;
 
-/**
- *
- * @author DI YEI
- */
-public class EmergencyContactRepository {
-    
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import app.Infrastructure.persistence.entities.EmergencyContactEntity;
+
+@Repository
+public interface EmergencyContactRepository extends JpaRepository<EmergencyContactEntity, Long> {
+
+    EmergencyContactEntity findByPhoneNumber(String phoneNumber);
 }
