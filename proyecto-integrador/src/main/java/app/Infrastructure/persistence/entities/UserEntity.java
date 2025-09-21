@@ -1,4 +1,4 @@
-package app.infrastructure.persistence.entities;
+package app.Infrastructure.persistence.entities;
 
 import app.domain.model.Role;
 import jakarta.persistence.*;
