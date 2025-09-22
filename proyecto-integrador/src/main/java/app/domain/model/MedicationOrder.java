@@ -1,6 +1,6 @@
 package app.domain.model;
 
-public class MedicationOrder extends Order {
+public class MedicationOrder {
 
     private int itemNumber;
     private String medicationId;
@@ -9,15 +9,14 @@ public class MedicationOrder extends Order {
     private String treatmentDuration;
     private double cost;
 
-    /*
-    public MedicationOrder(int orderNumber, Patient patientId, String physicianId, java.util.Date creationDate, int itemNumber, String medicationId, String medicationName, String dosage, String treatmentDuration, double cost) {
+    public MedicationOrder(int itemNumber, String medicationId, String medicationName, String dosage, String treatmentDuration, double cost) {
         this.itemNumber = itemNumber;
         this.medicationId = medicationId;
         this.medicationName = medicationName;
         this.dosage = dosage;
         this.treatmentDuration = treatmentDuration;
         this.cost = cost;
-    }*/
+    }
 
     public int getItemNumber() {
         return itemNumber;

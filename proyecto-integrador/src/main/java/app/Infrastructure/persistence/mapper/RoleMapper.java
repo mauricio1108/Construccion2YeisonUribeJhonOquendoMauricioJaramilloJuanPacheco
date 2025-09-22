@@ -1,7 +1,7 @@
-package app.Infrastructure.persistence.mapper;
+package app.infrastructure.persistence.mapper;
 
 import app.domain.model.Role;
-import app.Infrastructure.persistence.entities.RoleEntity;
+import app.infrastructure.persistence.entities.RoleEntity;
 
 public class RoleMapper {
 

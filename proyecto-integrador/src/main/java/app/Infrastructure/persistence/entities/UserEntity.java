@@ -1,4 +1,4 @@
-package app.Infrastructure.persistence.entities;
+package app.infrastructure.persistence.entities;
 
 import app.domain.model.Role;
 import jakarta.persistence.*;
@@ -37,15 +37,15 @@ public class UserEntity {
     @Column(nullable = false, length = 50)
     private String username;
 
-    @Column(name = "password_hash", nullable = false, length = 255)
-    private String passwordHash;
+    @Column(name = "password", nullable = false, length = 255)
+    private String password;
 
     // ===== CONSTRUCTORES =====
     public UserEntity() {}
 
     public UserEntity(String fullName, long identificationNumber, String email,
                       String phoneNumber, Date birthDate, String address,
-                      Role role, String username, String passwordHash) {
+                      Role role, String username, String passwor) {
         this.fullName = fullName;
         this.identificationNumber = identificationNumber;
         this.email = email;
@@ -54,7 +54,7 @@ public class UserEntity {
         this.address = address;
         this.role = role;
         this.username = username;
-        this.passwordHash = passwordHash;
+        this.password = password;
     }
 
     // ===== GETTERS & SETTERS =====
@@ -131,12 +131,12 @@ public class UserEntity {
         this.username = username;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setPassword(String password) {
+        this.password = password;
     }
     
 }

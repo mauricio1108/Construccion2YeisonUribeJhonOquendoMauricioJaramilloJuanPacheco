@@ -1,4 +1,4 @@
-package app.Infrastructure.persistence.entities;
+package app.infrastructure.persistence.entities;
 
 import jakarta.persistence.Embeddable;
 

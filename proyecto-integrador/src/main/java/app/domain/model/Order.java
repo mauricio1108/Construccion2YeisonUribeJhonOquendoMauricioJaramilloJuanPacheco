@@ -1,6 +1,6 @@
 package app.domain.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 
 public class Order {
@@ -8,7 +8,7 @@ public class Order {
     private String orderNumber;
     private Patient patient;
     private User doctor;
-    private LocalDate creationDate;
+    private Date creationDate;
     private List<MedicationOrder> medicationOrders;
     private List<ProcedureOrder> procedureOrders;
     private List<DiagnosticAidOrder> diagnosticAidOrders;
@@ -16,6 +16,13 @@ public class Order {
     public String getOrderNumber() {
         return orderNumber;
     }
+    
+    public Order(String orderNumber, Patient patient, User doctor, Date creationDate) {
+    this.orderNumber = orderNumber;
+    this.patient = patient;
+    this.doctor = doctor;
+    this.creationDate = creationDate;
+}
 
     public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber;
@@ -37,11 +44,11 @@ public class Order {
         this.doctor = doctor;
     }
 
-    public LocalDate getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 

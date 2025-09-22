@@ -1,6 +1,7 @@
 package app.domain.model;
- 
-public class ProcedureOrder extends Order {
+
+public class ProcedureOrder {
+
     private int itemNumber;
     private String procedureId;
     private String procedureName;
@@ -9,10 +10,8 @@ public class ProcedureOrder extends Order {
     private boolean requiresSpecialist;
     private String specialistId;
     private double cost;
- 
-    /*
-    public ProcedureOrder(int orderNumber, String patientId, String physicianId, java.util.Date creationDate, int itemNumber, String procedureId, String procedureName, int quantity, String repetitionFrequency, boolean requiresSpecialist, String specialistId, double cost) {
-        super(orderNumber, patientId, physicianId, creationDate);
+
+    public ProcedureOrder(int itemNumber, String procedureId, String procedureName, int quantity, String repetitionFrequency, boolean requiresSpecialist, String specialistId, double cost) {
         this.itemNumber = itemNumber;
         this.procedureId = procedureId;
         this.procedureName = procedureName;
@@ -21,8 +20,8 @@ public class ProcedureOrder extends Order {
         this.requiresSpecialist = requiresSpecialist;
         this.specialistId = specialistId;
         this.cost = cost;
-    }*/
- 
+    }
+
     // Getters and setters
     public int getItemNumber() { return itemNumber; }
     public void setItemNumber(int itemNumber) { this.itemNumber = itemNumber; }
