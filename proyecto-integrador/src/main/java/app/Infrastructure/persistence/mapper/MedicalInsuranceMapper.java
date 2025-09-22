@@ -1,23 +1,29 @@
 package app.infrastructure.persistence.mapper;
 
 import app.domain.model.MedicalInsurance;
-import app.Infrastructure.persistence.entities.MedicalInsuranceEntity;
+import app.infrastructure.persistence.entities.MedicalInsuranceEntity;
 
 public class MedicalInsuranceMapper {
 
     public static MedicalInsuranceEntity toEntity(MedicalInsurance insurance) {
         if (insurance == null) return null;
+        
         return new MedicalInsuranceEntity(
-                insurance.getProvider(),
-                insurance.getPolicyNumber()
+            insurance.getCompanyName(),
+            insurance.getPolicyNumber(),
+            insurance.isActive(),
+            insurance.getExpirationDate()
         );
     }
 
     public static MedicalInsurance toDomain(MedicalInsuranceEntity entity) {
         if (entity == null) return null;
+        
         return new MedicalInsurance(
-                entity.getProvider(),
-                entity.getPolicyNumber()
+            entity.getCompanyName(),
+            entity.getPolicyNumber(),
+            entity.isActive(),
+            entity.getExpirationDate()
         );
     }
 }

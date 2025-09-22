@@ -1,11 +1,11 @@
-package app.Infrastructure.persistence.mapper;
+package app.infrastructure.persistence.mapper;
 
 import app.domain.model.Patient;
 import app.domain.model.EmergencyContact;
 import app.domain.model.MedicalInsurance;
-import app.Infrastructure.persistence.entities.PatientEntity;
-import app.Infrastructure.persistence.entities.EmergencyContactEntity;
-import app.Infrastructure.persistence.entities.MedicalInsuranceEntity;
+import app.infrastructure.persistence.entities.PatientEntity;
+import app.infrastructure.persistence.entities.EmergencyContactEntity;
+import app.infrastructure.persistence.entities.MedicalInsuranceEntity;
 
 public class PatientMapper {
 

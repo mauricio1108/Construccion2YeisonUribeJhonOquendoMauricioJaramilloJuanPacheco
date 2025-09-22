@@ -1,14 +1,14 @@
-package app.Infrastructure.persistence.mapper;
+package app.infrastructure.persistence.mapper;
 
 import app.domain.model.EmergencyContact;
-import app.Infrastructure.persistence.entities.EmergencyContactEntity;
+import app.infrastructure.persistence.entities.EmergencyContactEntity;
 
 public class EmergencyContactMapper {
 
     public static EmergencyContactEntity toEntity(EmergencyContact contact) {
         if (contact == null) return null;
         return new EmergencyContactEntity(
-                contact.getName(),
+                contact.getContactName(),
                 contact.getPhoneNumber(),
                 contact.getRelationship()
         );
