@@ -16,7 +16,7 @@ public class OrderMapper {
 
         OrderEntity entity = new OrderEntity();
         entity.setOrderNumber(order.getOrderNumber());
-        entity.setCreationDate(order.getCreationDate());
+       // entity.setCreationDate(order.getCreationDate());
 
         // Relaciones principales
         entity.setPatient(PatientMapper.toEntity(order.getPatient()));
@@ -49,7 +49,7 @@ public class OrderMapper {
             return null;
         }
 
-        Order order = new Order(
+      /*  Order order = new Order(
             entity.getOrderNumber(),
             PatientMapper.toDomain(entity.getPatient()),
             UserMapper.toDomain(entity.getDoctor()),
@@ -67,8 +67,8 @@ public class OrderMapper {
 
         entity.getDiagnosticAidOrders().forEach(diag ->
             order.addDiagnosticAidOrder(DiagnosticAidOrderMapper.toDomain(diag))
-        );
+        );*/
 
-        return order;
+        return null;
     }
 }

@@ -8,7 +8,7 @@ public class ProcedureOrderEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(name = "procedure_name", nullable = false)
     private String procedureName;

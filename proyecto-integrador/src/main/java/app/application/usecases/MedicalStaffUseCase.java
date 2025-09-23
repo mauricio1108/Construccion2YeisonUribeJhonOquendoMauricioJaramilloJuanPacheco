@@ -40,7 +40,7 @@ public class MedicalStaffUseCase {
         } else if (!order.getProcedureOrders().isEmpty()) {
             createProcedureOrderService.createProcedureOrder(order, order.getProcedureOrders());
         } else if (!order.getDiagnosticAidOrders().isEmpty()) {
-            createDiagnosticAidOrderService.createOrder(order, order.getDiagnosticAidOrders().get(0));
+           // createDiagnosticAidOrderService.createOrder(order, order.getDiagnosticAidOrders().get(0));
         } else {
             throw new IllegalArgumentException("The order must contain at least one item.");
         }

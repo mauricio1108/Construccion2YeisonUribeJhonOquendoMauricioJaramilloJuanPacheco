@@ -3,7 +3,7 @@ package app.domain.model;
 public class ProcedureOrder {
 
     private int itemNumber;
-    private String procedureId;
+    private long procedureId;
     private String procedureName;
     private int quantity;
     private String repetitionFrequency;
@@ -11,7 +11,7 @@ public class ProcedureOrder {
     private String specialistId;
     private double cost;
 
-    public ProcedureOrder(int itemNumber, String procedureId, String procedureName, int quantity, String repetitionFrequency, boolean requiresSpecialist, String specialistId, double cost) {
+    public ProcedureOrder(int itemNumber, long procedureId, String procedureName, int quantity, String repetitionFrequency, boolean requiresSpecialist, String specialistId, double cost) {
         this.itemNumber = itemNumber;
         this.procedureId = procedureId;
         this.procedureName = procedureName;
@@ -25,8 +25,8 @@ public class ProcedureOrder {
     // Getters and setters
     public int getItemNumber() { return itemNumber; }
     public void setItemNumber(int itemNumber) { this.itemNumber = itemNumber; }
-    public String getProcedureId() { return procedureId; }
-    public void setProcedureId(String procedureId) { this.procedureId = procedureId; }
+    public long getProcedureId() { return procedureId; }
+    public void setProcedureId(long procedureId) { this.procedureId = procedureId; }
     public String getProcedureName() { return procedureName; }
     public void setProcedureName(String procedureName) { this.procedureName = procedureName; }
     public int getQuantity() { return quantity; }

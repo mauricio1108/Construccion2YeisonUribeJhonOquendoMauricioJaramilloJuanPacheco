@@ -1,5 +1,7 @@
 package app.domain.model;
  
+import java.sql.Date;
+
 public class DiagnosticAidOrder extends Order {
     private int itemNumber;
     private String diagnosticAidId;
@@ -8,6 +10,10 @@ public class DiagnosticAidOrder extends Order {
     private boolean requiresSpecialist;
     private User doctor;
     private double cost;
+
+    public DiagnosticAidOrder(String orderNumber, Patient patient, User doctor, Date creationDate) {
+        super(orderNumber, patient, doctor, creationDate);
+    }
  
     
     public int getItemNumber() { return itemNumber; }

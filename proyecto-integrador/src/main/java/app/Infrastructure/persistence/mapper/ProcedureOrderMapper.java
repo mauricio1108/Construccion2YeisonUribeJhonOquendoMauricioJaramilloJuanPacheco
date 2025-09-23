@@ -9,9 +9,9 @@ public class ProcedureOrderMapper {
         if (procedureOrder == null) return null;
 
         ProcedureOrderEntity entity = new ProcedureOrderEntity();
-        entity.setId(procedureOrder.getId());
+       // entity.setId(procedureOrder.getId());
         entity.setProcedureName(procedureOrder.getProcedureName());
-        entity.setDescription(procedureOrder.getDescription());
+        //entity.setDescription(procedureOrder.getDescription());
 
         // La relación con OrderEntity se asigna en OrderMapper
         return entity;
@@ -20,12 +20,12 @@ public class ProcedureOrderMapper {
     public static ProcedureOrder toDomain(ProcedureOrderEntity entity) {
         if (entity == null) return null;
 
-        ProcedureOrder procedureOrder = new ProcedureOrder();
+      /*  ProcedureOrder procedureOrder = new ProcedureOrder();
         procedureOrder.setId(entity.getId());
         procedureOrder.setProcedureName(entity.getProcedureName());
-        procedureOrder.setDescription(entity.getDescription());
+        procedureOrder.setDescription(entity.getDescription());*/
 
         // La relación con Order se asigna en OrderMapper
-        return procedureOrder;
+        return null;
     }
 }
