@@ -1,7 +1,7 @@
 package app.infrastructure.persistence.entities;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,7 +25,7 @@ public class OrderEntity {
     private UserEntity doctor;
 
     @Column(name = "creation_date", nullable = false)
-    private LocalDate creationDate;
+    private Date creationDate;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<MedicationOrderEntity> medicationOrders = new HashSet<>();
@@ -65,11 +65,11 @@ public class OrderEntity {
         this.doctor = doctor;
     }
 
-    public LocalDate getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 

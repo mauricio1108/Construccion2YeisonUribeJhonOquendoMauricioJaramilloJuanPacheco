@@ -3,20 +3,22 @@ package app.domain.model;
 public class MedicationOrder {
 
     private int itemNumber;
-    private String medicationId;
+    private long medicationId;
     private String medicationName;
     private String dosage;
     private String treatmentDuration;
     private double cost;
+    private String duration;
 
-    public MedicationOrder(int itemNumber, String medicationId, String medicationName, String dosage, String treatmentDuration, double cost) {
-        this.itemNumber = itemNumber;
-        this.medicationId = medicationId;
-        this.medicationName = medicationName;
-        this.dosage = dosage;
-        this.treatmentDuration = treatmentDuration;
-        this.cost = cost;
+    public String getDuration() {
+        return duration;
     }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    
 
     public int getItemNumber() {
         return itemNumber;
@@ -26,11 +28,11 @@ public class MedicationOrder {
         this.itemNumber = itemNumber;
     }
 
-    public String getMedicationId() {
+    public long getMedicationId() {
         return medicationId;
     }
 
-    public void setMedicationId(String medicationId) {
+    public void setMedicationId(long medicationId) {
         this.medicationId = medicationId;
     }
 
