@@ -1,7 +1,7 @@
-package app.infrastructure.persistence.mapper;
+package app.Infrastructure.persistence.mapper;
 
+import app.Infrastructure.persistence.entities.ProcedureOrderEntity;
 import app.domain.model.ProcedureOrder;
-import app.infrastructure.persistence.entities.ProcedureOrderEntity;
 
 public class ProcedureOrderMapper {
 

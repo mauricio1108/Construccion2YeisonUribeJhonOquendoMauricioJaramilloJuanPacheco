@@ -1,7 +1,7 @@
-package app.infrastructure.persistence.mapper;
+package app.Infrastructure.persistence.mapper;
 
+import app.Infrastructure.persistence.entities.EmergencyContactEntity;
 import app.domain.model.EmergencyContact;
-import app.infrastructure.persistence.entities.EmergencyContactEntity;
 
 public class EmergencyContactMapper {
 

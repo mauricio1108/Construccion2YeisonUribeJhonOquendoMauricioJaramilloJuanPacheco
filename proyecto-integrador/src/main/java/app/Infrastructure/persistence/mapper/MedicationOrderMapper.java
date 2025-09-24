@@ -1,7 +1,7 @@
-package app.infrastructure.persistence.mapper;
+package app.Infrastructure.persistence.mapper;
 
+import app.Infrastructure.persistence.entities.MedicationOrderEntity;
 import app.domain.model.MedicationOrder;
-import app.infrastructure.persistence.entities.MedicationOrderEntity;
 
 public class MedicationOrderMapper {
 

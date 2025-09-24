@@ -1,4 +1,4 @@
-package app.infrastructure.persistence.entities;
+package app.Infrastructure.persistence.entities;
 
 import jakarta.persistence.*;
 import java.util.Date;

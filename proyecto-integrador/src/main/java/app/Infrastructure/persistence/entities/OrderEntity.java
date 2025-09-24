@@ -1,9 +1,20 @@
-package app.infrastructure.persistence.entities;
+package app.Infrastructure.persistence.entities;
 
-import jakarta.persistence.*;
+
 import java.sql.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "orders") // "order" es palabra reservada en MySQL, mejor pluralizar
@@ -28,13 +39,13 @@ public class OrderEntity {
     private Date creationDate;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<MedicationOrderEntity> medicationOrders = new HashSet<>();
+    private List<MedicationOrderEntity> medicationOrders;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ProcedureOrderEntity> procedureOrders = new HashSet<>();
+    private List<ProcedureOrderEntity> procedureOrders;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<DiagnosticAidOrderEntity> diagnosticAidOrders = new HashSet<>();
+    private List<DiagnosticAidOrderEntity> diagnosticAidOrders;
 
     // Getters y setters
     public Long getId() {
@@ -73,27 +84,27 @@ public class OrderEntity {
         this.creationDate = creationDate;
     }
 
-    public Set<MedicationOrderEntity> getMedicationOrders() {
+    public List<MedicationOrderEntity> getMedicationOrders() {
         return medicationOrders;
     }
 
-    public void setMedicationOrders(Set<MedicationOrderEntity> medicationOrders) {
+    public void setMedicationOrders(List<MedicationOrderEntity> medicationOrders) {
         this.medicationOrders = medicationOrders;
     }
 
-    public Set<ProcedureOrderEntity> getProcedureOrders() {
+    public List<ProcedureOrderEntity> getProcedureOrders() {
         return procedureOrders;
     }
 
-    public void setProcedureOrders(Set<ProcedureOrderEntity> procedureOrders) {
+    public void setProcedureOrders(List<ProcedureOrderEntity> procedureOrders) {
         this.procedureOrders = procedureOrders;
     }
 
-    public Set<DiagnosticAidOrderEntity> getDiagnosticAidOrders() {
+    public List<DiagnosticAidOrderEntity> getDiagnosticAidOrders() {
         return diagnosticAidOrders;
     }
 
-    public void setDiagnosticAidOrders(Set<DiagnosticAidOrderEntity> diagnosticAidOrders) {
+    public void setDiagnosticAidOrders(List<DiagnosticAidOrderEntity> diagnosticAidOrders) {
         this.diagnosticAidOrders = diagnosticAidOrders;
     }
 }

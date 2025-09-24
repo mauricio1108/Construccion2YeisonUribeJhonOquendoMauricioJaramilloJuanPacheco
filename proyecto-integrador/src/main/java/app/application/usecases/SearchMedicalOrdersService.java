@@ -1,10 +1,9 @@
 package app.application.usecases;
 
-import app.domain.model.Order;
 import java.util.List;
-//import app.domain.repository.OrderRepository;
-import app.infrastructure.persistence.entities.OrderEntity;
-import app.infrastructure.persistence.repository.OrderRepository;
+
+import app.Infrastructure.persistence.entities.OrderEntity;
+import app.Infrastructure.persistence.repository.OrderRepository;
 
 
 public class SearchMedicalOrdersService extends MedicalStaffUseCase {

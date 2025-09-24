@@ -1,11 +1,11 @@
-package app.infrastructure.persistence.repository;
+package app.Infrastructure.persistence.repository;
+
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import app.infrastructure.persistence.entities.DiagnosticAidOrderEntity;
-
-import java.util.List;
+import app.Infrastructure.persistence.entities.DiagnosticAidOrderEntity;
 
 @Repository
 public interface DiagnosticAidOrderRepository extends JpaRepository<DiagnosticAidOrderEntity, Long> {
