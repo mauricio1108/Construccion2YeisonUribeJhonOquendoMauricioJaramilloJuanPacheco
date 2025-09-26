@@ -2,9 +2,6 @@ package app.Infrastructure.adapters;
 import app.domain.model.Incident;
 import app.domain.ports.IncidentPort;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 public class IncidentAdapter implements IncidentPort {
 	
@@ -14,7 +11,7 @@ public class IncidentAdapter implements IncidentPort {
 	    }
 
 	    @Override
-	    public Incident findIncidentById(String incidentId) throws Exception {
+	    public Incident findIncidentById(Long incidentId) throws Exception {
 	        System.out.println("Buscando incidente con ID: " + incidentId);
 	        return null; 
 	    }
@@ -25,12 +22,12 @@ public class IncidentAdapter implements IncidentPort {
 	    }
 
 	    @Override
-	    public void resolveIncident(String incidentId) throws Exception {
+	    public void resolveIncident(Long incidentId) throws Exception {
 	        System.out.println("Marcando incidente como resuelto: " + incidentId);
 	    }
 
 	    @Override
-	    public void deleteIncident(String incidentId) throws Exception {
+	    public void deleteIncident(Long incidentId) throws Exception {
 	        System.out.println("Eliminando incidente con ID: " + incidentId);
 	    }
 	}
