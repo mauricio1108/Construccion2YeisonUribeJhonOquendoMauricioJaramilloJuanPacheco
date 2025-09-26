@@ -1,16 +1,10 @@
 package app.application.usecases;
 
 import app.domain.model.Incident;
+import app.domain.model.PatientRecord;
 
 public interface IncidentUseCase {
 	
-	 void reportIncident(Incident incident) throws Exception;
-
-	    Incident findIncidentById(String incidentId) throws Exception;
-
-	    void updateIncident(Incident incident) throws Exception;
-
-	    void resolveIncident(String incidentId) throws Exception;
-
-	    void deleteIncident(String incidentId) throws Exception;
-}
+	    void createPatientRecord(PatientRecord record) throws Exception;
+		PatientRecord findPatientRecordById(Long id) throws Exception;
+		}
