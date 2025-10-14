@@ -1,8 +1,14 @@
 package app.application.usecases;
 
-import app.domain.model.PatientRecord;
+import app.domain.model.Order;
+import app.domain.model.Patient;
+import java.util.List;
 
 public interface DoctorUseCase {
-    void createPatientRecord(PatientRecord record) throws Exception;
-    PatientRecord findRecordById(String id) throws Exception;
+
+    void createMedicationOrder(Order order) throws Exception;
+    void createProcedureOrder(Order order) throws Exception;
+    void createDiagnosticAidOrder(Order order) throws Exception;
+
+    List<Order> findOrdersByPatient(String patientDocument) throws Exception;
 }

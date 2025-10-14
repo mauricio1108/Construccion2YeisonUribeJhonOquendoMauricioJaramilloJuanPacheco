@@ -12,17 +12,30 @@ public class Order {
     private List<MedicationOrder> medicationOrders;
     private List<ProcedureOrder> procedureOrders;
     private List<DiagnosticAidOrder> diagnosticAidOrders;
+    private String orderType;
 
     public String getOrderNumber() {
         return orderNumber;
     }
+
+    public Order() {
+    }
     
-    public Order(String orderNumber, Patient patient, User doctor, Date creationDate) {
+    public Order(String orderNumber, Patient patient, User doctor, Date creationDate, String orderType) {
     this.orderNumber = orderNumber;
     this.patient = patient;
     this.doctor = doctor;
     this.creationDate = creationDate;
+    this.orderType = orderType;
 }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
+    }
 
     public void setOrderNumber(String orderNumber) {
         this.orderNumber = orderNumber;

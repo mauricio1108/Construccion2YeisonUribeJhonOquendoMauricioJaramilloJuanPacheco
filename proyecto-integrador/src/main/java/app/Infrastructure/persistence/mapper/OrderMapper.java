@@ -40,7 +40,7 @@ public class OrderMapper {
 		}
 
 		Order order = new Order(entity.getOrderNumber(), PatientMapper.toDomain(entity.getPatient()),
-				UserMapper.toDomain(entity.getDoctor()), entity.getCreationDate());
+				UserMapper.toDomain(entity.getDoctor()), entity.getCreationDate(), entity.getOrderType());
 
 		// Subórdenes
 		entity.getMedicationOrders().forEach(med -> order.getMedicationOrders().add(MedicationOrderMapper.toDomain(med)));

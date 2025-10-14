@@ -1,26 +1,44 @@
 package app.application.usecases.impl;
 
 import app.application.usecases.DoctorUseCase;
+import app.domain.model.Order;
+import app.domain.ports.OrderPort;
+import app.domain.validator.CommonsValidator;
+import org.springframework.stereotype.Service;
+import java.util.List;
 
-import app.domain.model.PatientRecord;
-import app.domain.ports.DoctorPort;
-
-
+@Service
 public class DoctorUseCaseImpl implements DoctorUseCase {
 
-    private final DoctorPort doctorPort;
+    private final OrderPort orderPort;
+    private final CommonsValidator commonsValidator;
 
-    public DoctorUseCaseImpl(DoctorPort doctorPort) {
-        this.doctorPort = doctorPort;
+    public DoctorUseCaseImpl(OrderPort orderPort, CommonsValidator commonsValidator) {
+        this.orderPort = orderPort;
+        this.commonsValidator = commonsValidator;
     }
 
     @Override
-    public void createPatientRecord(PatientRecord record) throws Exception {
-        doctorPort.saveRecord(record);
+    public void createMedicationOrder(Order order) throws Exception {
+        commonsValidator.isValidString("el tipo de orden", order.getOrderType());
+        orderPort.save(order);
+        System.out.println("Orden de medicamentos creada correctamente.");
     }
 
     @Override
-    public PatientRecord findRecordById(String id) throws Exception {
-        return doctorPort.findRecordById(id);
+    public void createProcedureOrder(Order order) throws Exception {
+        orderPort.save(order);
+        System.out.println("Orden de procedimiento creada correctamente.");
+    }
+
+    @Override
+    public void createDiagnosticAidOrder(Order order) throws Exception {
+        orderPort.save(order);
+        System.out.println("Orden de ayuda diagnóstica creada correctamente.");
+    }
+
+    @Override
+    public List<Order> findOrdersByPatient(String identificationNumber) throws Exception {
+        return orderPort.findByPatientDocument(identificationNumber);
     }
 }

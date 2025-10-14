@@ -37,6 +37,9 @@ public class OrderEntity {
 
     @Column(name = "creation_date", nullable = false)
     private Date creationDate;
+    
+    @Column(name = "order_type", nullable = false, length = 50)
+    private String orderType;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MedicationOrderEntity> medicationOrders;
@@ -70,6 +73,14 @@ public class OrderEntity {
 
     public UserEntity getDoctor() {
         return doctor;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
     }
 
     public void setDoctor(UserEntity doctor) {
