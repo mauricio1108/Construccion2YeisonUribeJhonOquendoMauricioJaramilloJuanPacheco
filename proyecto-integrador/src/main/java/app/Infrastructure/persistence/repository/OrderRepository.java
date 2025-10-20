@@ -1,5 +1,5 @@
 // app/infrastructure/persistence/repository/OrderRepository.java
-package app.infrastructure.persistence.repository;
+package app.Infrastructure.persistence.repository;
 
 import app.Infrastructure.persistence.entities.OrderEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

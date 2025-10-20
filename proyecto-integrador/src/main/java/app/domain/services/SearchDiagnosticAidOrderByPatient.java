@@ -8,9 +8,14 @@ import java.util.stream.Collectors;
 
 public class SearchDiagnosticAidOrderByPatient {
 
-    private OrderPort orderPort;
 
-    public List<DiagnosticAidOrder> searchByPatientId(String patientId) throws Exception {
+    private final OrderPort orderPort;
+
+    public SearchDiagnosticAidOrderByPatient(OrderPort orderPort) {
+        this.orderPort = orderPort;
+    }
+
+    public List<DiagnosticAidOrder> searchByPatientId(Long patientId) throws Exception {
         return orderPort.findByPatientId(patientId).stream()
                 .flatMap(order -> order.getDiagnosticAidOrders().stream())
                 .collect(Collectors.toList());

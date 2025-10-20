@@ -1,4 +1,4 @@
-package app.infrastructure.adapters.input.rest;
+package app.Infrastructure.adapters.input.rest;
 
 import app.application.dto.request.RegisterPatientRequest;
 import jakarta.validation.Valid;

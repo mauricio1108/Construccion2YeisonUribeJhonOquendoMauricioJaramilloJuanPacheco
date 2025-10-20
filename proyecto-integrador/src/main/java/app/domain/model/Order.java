@@ -18,7 +18,9 @@ public class Order {
         return orderNumber;
     }
 
-    public Order() {
+    
+    public Order (){
+    		
     }
     
     public Order(String orderNumber, Patient patient, User doctor, Date creationDate, String orderType) {
