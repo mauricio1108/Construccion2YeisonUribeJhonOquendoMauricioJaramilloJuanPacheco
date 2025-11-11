@@ -17,7 +17,7 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
     List<OrderEntity> findByPatientId(Long patientId);
 
     // Buscar por documento del paciente
-    @Query("SELECT o FROM OrderEntity o WHERE o.patient.document = :patientDocument")
+    @Query("SELECT o FROM OrderEntity o WHERE o.patient.identificationNumber = :patientDocument")
     List<OrderEntity> findByPatientDocument(@Param("patientDocument") String patientDocument);
 
     // Buscar por ID del doctor

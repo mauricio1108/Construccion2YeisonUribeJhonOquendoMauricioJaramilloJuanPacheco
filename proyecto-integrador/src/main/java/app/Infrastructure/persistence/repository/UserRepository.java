@@ -8,7 +8,8 @@ import app.Infrastructure.persistence.entities.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    UserEntity findByDocument(long document);
+    // The entity uses 'identificationNumber' and 'username' fields
+    UserEntity findByIdentificationNumber(long identificationNumber);
 
-    UserEntity findByUserName(String userName);
+    UserEntity findByUsername(String username);
 }

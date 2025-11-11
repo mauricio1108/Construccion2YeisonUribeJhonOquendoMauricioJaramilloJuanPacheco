@@ -8,7 +8,8 @@ import app.Infrastructure.persistence.entities.PatientEntity;
 @Repository
 public interface PatientRepository extends JpaRepository<PatientEntity, Long> {
 
-    PatientEntity findByDocument(String document);
+    // PatientEntity uses 'identificationNumber' and 'email'
+    PatientEntity findByIdentificationNumber(String identificationNumber);
 
     PatientEntity findByEmail(String email);
 }

@@ -8,7 +8,8 @@ import app.Infrastructure.persistence.entities.MedicalInsuranceEntity;
 @Repository
 public interface MedicalInsuranceRepository extends JpaRepository<MedicalInsuranceEntity, Long> {
 
-    MedicalInsuranceEntity findByName(String name);
+    // Entity field is 'companyName' and 'policyNumber'
+    MedicalInsuranceEntity findByCompanyName(String companyName);
 
     MedicalInsuranceEntity findByPolicyNumber(String policyNumber);
 }
