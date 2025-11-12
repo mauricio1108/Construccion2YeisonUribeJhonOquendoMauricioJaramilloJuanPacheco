@@ -10,12 +10,6 @@ public class CreatePatient {
 
     public void createPatient(Patient patient) throws Exception {
         try {
-            String validatedId = ValueObjectValidator.validateAndGetIdentificationNumber(
-                    patient.getIdentificationNumber()
-            );
-            String validatedPhone = ValueObjectValidator.validateAndGetPhoneNumber(
-                    patient.getPhoneNumber()
-            );
 
             if (patientPort.findById(patient.getIdentificationNumber()) != null) {
                 throw new IllegalArgumentException("Ya existe un paciente con esta identificación.");
