@@ -2,20 +2,19 @@ package app.application.usecases;
 
 import java.util.List;
 
-import app.Infrastructure.persistence.entities.OrderEntity;
-import app.Infrastructure.persistence.repository.OrderRepository;
-
+import app.domain.services.OrderService;
+import app.domain.model.Order;
 
 public class SearchMedicalOrdersService extends MedicalStaffUseCase {
 
-    private final OrderRepository orderRepository;
+    private final OrderService orderService;
 
-    public SearchMedicalOrdersService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
+    public SearchMedicalOrdersService(OrderService orderService) {
+        this.orderService = orderService;
     }
 
-    public List<OrderEntity> getOrdersByPatient(long patientId) {
-        return orderRepository.findByPatientId(patientId);
+    public List<Order> getOrdersByPatient(long patientId) throws Exception {
+        return orderService.findByPatientId(patientId);
     }
 
 }

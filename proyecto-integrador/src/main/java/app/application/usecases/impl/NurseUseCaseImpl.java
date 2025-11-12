@@ -3,38 +3,40 @@ package app.application.usecases.impl;
 import app.application.usecases.NurseUseCase;
 import app.domain.model.NursingRecord;
 import app.domain.model.Patient;
-import app.domain.ports.NursePort;
+import app.domain.services.NurseService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NurseUseCaseImpl implements NurseUseCase {
-	
-	private final NursePort nursePort;
+    
+    private final NurseService nurseService;
 
-    public NurseUseCaseImpl(NursePort nursePort) {
-        this.nursePort = nursePort;
+    public NurseUseCaseImpl(NurseService nurseService) {
+        this.nurseService = nurseService;
     }
 
     @Override
     public void registerNursingRecord(NursingRecord record) throws Exception {
-        nursePort.saveRecord(record);
+        nurseService.registerNursingRecord(record);
     }
 
     @Override
     public NursingRecord findRecordById(String recordId) throws Exception {
-        return nursePort.findRecordById(recordId);
+        return nurseService.findRecordById(recordId);
     }
 
     @Override
     public void updateNursingRecord(NursingRecord record) throws Exception {
-        nursePort.updateRecord(record);
+        nurseService.updateNursingRecord(record);
     }
 
     @Override
     public void deleteNursingRecord(String recordId) throws Exception {
-        nursePort.deleteRecord(recordId);
+        nurseService.deleteNursingRecord(recordId);
     }
 
     @Override
     public Patient findPatientByDocument(String document) throws Exception {
-        return nursePort.findPatientByDocument(document);
+        return nurseService.findPatientByDocument(document);
     }
 }

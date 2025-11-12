@@ -1,12 +1,14 @@
 package app.Infrastructure.adapters;
 
+import org.springframework.stereotype.Component;
 import app.domain.model.User;
 import app.domain.ports.HumanResourcesPort;
 import java.util.*;
 
+@Component
 public class HumanResourcesAdapter implements HumanResourcesPort {
-	
-	private final Map<String, User> userStorage = new HashMap<>();
+    
+    private final Map<String, User> userStorage = new HashMap<>();
 
     @Override
     public void save(User user) {

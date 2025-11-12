@@ -2,7 +2,7 @@ package app.application.usecases.impl;
 
 import app.application.usecases.DoctorUseCase;
 import app.domain.model.Order;
-import app.domain.ports.OrderPort;
+import app.domain.services.OrderService;
 import app.domain.validator.CommonsValidator;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -10,35 +10,35 @@ import java.util.List;
 @Service
 public class DoctorUseCaseImpl implements DoctorUseCase {
 
-    private final OrderPort orderPort;
+    private final OrderService orderService;
     private final CommonsValidator commonsValidator;
 
-    public DoctorUseCaseImpl(OrderPort orderPort, CommonsValidator commonsValidator) {
-        this.orderPort = orderPort;
+    public DoctorUseCaseImpl(OrderService orderService, CommonsValidator commonsValidator) {
+        this.orderService = orderService;
         this.commonsValidator = commonsValidator;
     }
 
     @Override
     public void createMedicationOrder(Order order) throws Exception {
         commonsValidator.isValidString("el tipo de orden", order.getOrderType());
-        orderPort.save(order);
+        orderService.saveOrder(order);
         System.out.println("Orden de medicamentos creada correctamente.");
     }
 
     @Override
     public void createProcedureOrder(Order order) throws Exception {
-        orderPort.save(order);
+        orderService.saveOrder(order);
         System.out.println("Orden de procedimiento creada correctamente.");
     }
 
     @Override
     public void createDiagnosticAidOrder(Order order) throws Exception {
-        orderPort.save(order);
+        orderService.saveOrder(order);
         System.out.println("Orden de ayuda diagnóstica creada correctamente.");
     }
 
     @Override
     public List<Order> findOrdersByPatient(String identificationNumber) throws Exception {
-        return orderPort.findByPatientDocument(identificationNumber);
+        return orderService.findByPatientDocument(identificationNumber);
     }
 }

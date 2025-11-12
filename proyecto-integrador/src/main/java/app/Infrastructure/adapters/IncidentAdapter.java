@@ -1,8 +1,10 @@
 package app.Infrastructure.adapters;
+
+import org.springframework.stereotype.Component;
 import app.domain.model.Incident;
 import app.domain.ports.IncidentPort;
 
-
+@Component
 public class IncidentAdapter implements IncidentPort {
 	
 	 @Override

@@ -1,11 +1,12 @@
 package app.Infrastructure.adapters;
 
+import org.springframework.stereotype.Component;
 
 import app.domain.model.NursingRecord;
 import app.domain.model.Patient;
 import app.domain.ports.NursePort;
 
-
+@Component
 public class NurseAdapter implements NursePort  {
 	
 	@Override

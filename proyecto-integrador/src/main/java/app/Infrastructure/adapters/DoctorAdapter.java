@@ -4,8 +4,9 @@ import app.domain.model.PatientRecord;
 import app.domain.ports.DoctorPort;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class DoctorAdapter implements DoctorPort {
 
     private final Map<String, PatientRecord> database = new HashMap<>();
